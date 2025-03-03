@@ -38,7 +38,7 @@ Route::prefix('esc')->group(function () {
     });
 });
 
-// Alliance Routes
+// Alliance Routes hello world
 Route::prefix('alliance')->group(function () {
     // Show company page
     Route::get('/', [AllianceController::class, 'index'])->name('alliance.index');
