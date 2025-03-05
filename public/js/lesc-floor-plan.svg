@@ -1,0 +1,132 @@
+<!-- File: public/js/esc-floor-plan.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" class="floor-plan">
+    <!-- Background -->
+    <rect width="1000" height="600" fill="#1a2632" stroke="none"/>
+    
+    <!-- Floor plan outline -->
+    <rect x="60" y="80" width="880" height="480" fill="none" stroke="#808080" stroke-width="1.5"/>
+    
+    <!-- Room dividers -->
+    <path d="M 260,80 L 260,560 M 460,80 L 460,560 M 660,80 L 660,560" 
+          fill="none" stroke="#808080" stroke-width="1"/>
+    
+    <!-- Diagonal sections -->
+    <path d="M 460,350 L 660,250" fill="none" stroke="#808080" stroke-width="1"/>
+    <path d="M 460,450 L 660,350" fill="none" stroke="#808080" stroke-width="1"/>
+    
+    <!-- Status Legend -->
+    <rect x="60" y="45" width="12" height="12" fill="#92c83e" stroke="none"/>
+    <text x="77" y="55" font-family="Arial" font-size="10" fill="white">Occupied</text>
+    
+    <rect x="140" y="45" width="12" height="12" fill="#e74c3c" stroke="none"/>
+    <text x="157" y="55" font-family="Arial" font-size="10" fill="white">Vacant</text>
+    
+    <!-- Left section workstations - salmon color -->
+    <g class="workstation-group zone-left">
+        <!-- Top left section, 4 rows of 4 -->
+        <rect class="workstation" data-id="WSM001" x="75" y="100" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM002" x="125" y="100" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM003" x="175" y="100" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM004" x="225" y="100" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM005" x="75" y="135" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM006" x="125" y="135" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM007" x="175" y="135" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM008" x="225" y="135" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM009" x="75" y="170" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM010" x="125" y="170" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM011" x="175" y="170" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM012" x="225" y="170" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM013" x="75" y="205" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM014" x="125" y="205" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM015" x="175" y="205" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM016" x="225" y="205" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        
+        <!-- Bottom left section, 4 rows of 4 -->
+        <rect class="workstation" data-id="WSM017" x="75" y="370" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM018" x="125" y="370" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM019" x="175" y="370" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM020" x="225" y="370" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM021" x="75" y="405" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM022" x="125" y="405" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM023" x="175" y="405" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM024" x="225" y="405" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM025" x="75" y="440" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM026" x="125" y="440" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM027" x="175" y="440" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM028" x="225" y="440" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM029" x="75" y="475" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM030" x="125" y="475" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM031" x="175" y="475" width="40" height="25" fill="#FFCCBC" stroke="none" />
+        <rect class="workstation" data-id="WSM032" x="225" y="475" width="40" height="25" fill="#FFCCBC" stroke="none" />
+    </g>
+    
+    <!-- Middle section workstations - light yellow color -->
+    <g class="workstation-group zone-middle">
+        <rect class="workstation" data-id="WSM033" x="275" y="100" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM034" x="325" y="100" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM035" x="375" y="100" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM036" x="425" y="100" width="40" height="25" fill="#FFFACD" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM037" x="275" y="135" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM038" x="325" y="135" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM039" x="375" y="135" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM040" x="425" y="135" width="40" height="25" fill="#FFFACD" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM041" x="275" y="170" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM042" x="325" y="170" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM043" x="375" y="170" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM044" x="425" y="170" width="40" height="25" fill="#FFFACD" stroke="none" />
+        
+        <rect class="workstation" data-id="WSM045" x="275" y="205" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM046" x="325" y="205" width="40" height="25" fill="#FFFACD" stroke="none" />
+        <rect class="workstation" data-id="WSM047" x="375" y="205" width="40" height="25" fill="#FFFACD" stroke="none" />
+        
+        <!-- Conference table -->
+        <rect class="conference-table" x="375" y="300" width="70" height="40" fill="#D7E9B9" stroke="none" rx="5" ry="5" />
+    </g>
+    
+    <!-- Right section workstations - light green color, angled layout -->
+    <g class="workstation-group zone-right">
+        <!-- Angled workstations -->
+        <rect class="workstation" data-id="WSM048" x="500" y="100" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 500 100)" />
+        <rect class="workstation" data-id="WSM049" x="550" y="100" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 550 100)" />
+        <rect class="workstation" data-id="WSM050" x="600" y="100" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 600 100)" />
+        
+        <rect class="workstation" data-id="WSM051" x="520" y="150" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 520 150)" />
+        <rect class="workstation" data-id="WSM052" x="570" y="150" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 570 150)" />
+        <rect class="workstation" data-id="WSM053" x="620" y="150" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 620 150)" />
+        
+        <rect class="workstation" data-id="WSM054" x="540" y="200" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 540 200)" />
+        <rect class="workstation" data-id="WSM055" x="590" y="200" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 590 200)" />
+        <rect class="workstation" data-id="WSM056" x="640" y="200" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 640 200)" />
+        
+        <rect class="workstation" data-id="WSM057" x="510" y="280" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 510 280)" />
+        <rect class="workstation" data-id="WSM058" x="560" y="280" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 560 280)" />
+        <rect class="workstation" data-id="WSM059" x="610" y="280" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 610 280)" />
+        
+        <rect class="workstation" data-id="WSM060" x="530" y="330" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 530 330)" />
+        <rect class="workstation" data-id="WSM061" x="580" y="330" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 580 330)" />
+        <rect class="workstation" data-id="WSM062" x="630" y="330" width="40" height="25" fill="#D7E9B9" stroke="none" transform="rotate(-25 630 330)" />
+        
+        <!-- Bottom right section workstations -->
+        <rect class="workstation" data-id="WSM063" x="725" y="410" width="40" height="25" fill="#D7E9B9" stroke="none" />
+        <rect class="workstation" data-id="WSM064" x="725" y="445" width="40" height="25" fill="#D7E9B9" stroke="none" />
+        <rect class="workstation" data-id="WSM065" x="725" y="480" width="40" height="25" fill="#D7E9B9" stroke="none" />
+    </g>
+    
+    <!-- Room labels -->
+    <rect x="735" y="125" width="90" height="70" fill="none" stroke="#808080" stroke-width="1"/>
+    <text x="780" y="165" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Manager Office</text>
+    
+    <rect x="735" y="245" width="90" height="70" fill="none" stroke="#808080" stroke-width="1"/>
+    <text x="780" y="285" font-family="Arial" font-size="10" fill="white" text-anchor="middle">IT Room</text>
+    
+    <rect x="300" y="445" width="110" height="75" fill="none" stroke="#808080" stroke-width="1"/>
+    <text x="355" y="485" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Conference Room</text>
+</svg>
