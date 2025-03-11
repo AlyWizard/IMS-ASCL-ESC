@@ -7,13 +7,21 @@
     <title>Robinsons Equitable Tower - Company Selection</title>
     <!-- Load external CSS file -->
     <link href="{{ asset('css/company-selection.css') }}" rel="stylesheet">
+    <!-- 
+    Note: This page requires the following images:
+    - /images/city-skyline.jpg - Background image for the body
+    - /images/robinsons-logo.png - Logo for the building header
+    - /images/wood-texture.jpg - Texture for the ESC card background
+    - /images/alliance-logo.png - Alliance company logo
+    - /images/esc-logo.png - ESC company logo
+    -->
 </head>
 <body>
     <div class="main-container">
         <!-- Building header -->
         <header class="building-header">
             <div class="building-logo">
-                <img src="{{ asset('images/robinsons-logo.webp')}}" alt="Robinsons Logo">
+                <img src="{{ asset('images/robinsons-logo.webp')}}"alt="Robinsons logo">
             </div>
             <h1 class="building-name">Robinsons Equitable Tower</h1>
         </header>

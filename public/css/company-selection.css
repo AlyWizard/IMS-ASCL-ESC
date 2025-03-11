@@ -9,7 +9,7 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background-image: url('../images/city-skyline.jpg');
+    background-image: url('../images/city-skyline.jpg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -66,7 +66,9 @@ input[type=radio] {
 .building-logo img {
     width: 60px;
     height: auto;
-    border-radius:30%
+    border-radius: 30%;
+    margin-right: 20px;
+
 }
 
 .building-name {
@@ -74,6 +76,7 @@ input[type=radio] {
     font-size: 2.2rem;
     font-weight: 700;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-family:Inria Serif;
 }
 
 /* Directory container */
@@ -86,7 +89,7 @@ input[type=radio] {
 /* Directory cards styling */
 .directory-card {
     border-radius: 12px;
-    padding: 20px;
+    padding: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,21 +107,40 @@ input[type=radio] {
 
 /* Alliance card specific styling */
 .alliance-card {
-    background-color: #2a6eb5;
-    border: 3px solid #ffffff;
-    background-image:url("alliance-card.png");
+    background-image: url('../images/alliance-card.png');
+    background-size:auto;
+    background-position: center;
+    border: 10px solid #36758D;
+    position: relative;
 }
 
 /* ESC card specific styling */
 .esc-card {
-    background-color: #e8e8e0;
-    border: 3px solid #ffffff;
+    background-image: url('../images/esc-card.png');
+    background-size: cover;
+    background-position: center;
+    border: 10px solid #879D5A;
+    position: relative;
+}
+
+/* Add overlay to ensure text readability */
+.esc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(232, 232, 224, 0.7);
+    z-index: 0;
 }
 
 .card-content {
     display: flex;
     align-items: center;
     flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .company-logo {
@@ -171,6 +193,8 @@ input[type=radio] {
     transition: all 0.3s ease;
     text-decoration: none;
     font-weight: 500;
+    position: relative;
+    z-index: 1;
 }
 
 .esc-card .enter-btn {
