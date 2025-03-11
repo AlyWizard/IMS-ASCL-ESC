@@ -1,3 +1,4 @@
+/* public/css/company-selection.css */
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&swap");
 
 * {
@@ -8,222 +9,231 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #1a2632;
+    background-image: url('../images/city-skyline.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background .4s ease-in;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Add an overlay to darken the background image slightly */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
 input[type=radio] {
     display: none;
 }
 
-.container {
-    width: 80%;
-    max-width: 900px;
-    height: 750px;
+.main-container {
+    width: 90%;
+    max-width: 1000px;
     position: relative;
-    transform-style: preserve-3d;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto; /* Centers the container horizontally */
-    padding: 0 15px; /* Adds some padding on small screens */
+    z-index: 1;
 }
 
-.company-card {
-    width: 200%;
-    height: 100%;
-    background-color: #1a2632;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    overflow: hidden;
-    position: relative;
-}
-
-.company-info {
-    padding: 50px;
-    color: white;
-    display: flex;
-    padding-top: 360px; /* Add extra padding at the top to make space for the logo */
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.company-logo {
+/* Building header styling */
+.building-header {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-
-
+    padding: 0 20px;
 }
 
-.logo-img {
-    width: 1px;
-    height: 1px;
+.building-logo {
+    width: 60px;
+    height: 60px;
     background-color: transparent;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 15px;
-
-    top: 80px;
-    left: 80px;
-    position: absolute;
-    z-index: 2; /* Ensure it appears above other elements */
-
+    margin-right: 15px;
 }
 
-/* If using actual images, you can also adjust them separately */
-#esc-icon {
-    max-width: 100px;
-    max-height: 100px;
-    margin-left: 10px;
+.building-logo img {
+    width: 60px;
+    height: auto;
+    border-radius:30%
 }
 
-#alliance-icon {
-    max-width: 260px;  /* Different size for Alliance icon */
-    max-height: 260px; /* Different size for Alliance icon */
-    margin-left: 155px;
-}
-.logo-text {
-    font-size: 2.5rem;
-    color: #92c83e;
-    font-weight: bold;
-    margin-left: 0; /* Remove any left margin */
-
+.building-name {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.company-name {
-    font-size: 2rem;
-    margin-bottom: 30px;
+/* Directory container */
+.directory-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Directory cards styling */
+.directory-card {
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.directory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Alliance card specific styling */
+.alliance-card {
+    background-color: #2a6eb5;
+    border: 3px solid #ffffff;
+    background-image:url("alliance-card.png");
+}
+
+/* ESC card specific styling */
+.esc-card {
+    background-color: #e8e8e0;
+    border: 3px solid #ffffff;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.company-logo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.company-logo img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* Black and white hover effect for logos */
+.company-logo img:hover {
+    filter: grayscale(100%);
+    transform: scale(1.05);
+}
+
+.company-info {
+    color: white;
+}
+
+.esc-card .company-info {
+    color: #333;
+}
+
+.company-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.floor-info {
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
 .enter-btn {
-    background-color: #92c83e;
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
-    border: none;
+    border: 2px solid white;
     border-radius: 5px;
-    padding: 10px 30px;
+    padding: 8px 20px;
     font-size: 1rem;
     cursor: pointer;
-    width: fit-content;
     transition: all 0.3s ease;
     text-decoration: none;
-    display: inline-block;
-    text-align: center;
+    font-weight: 500;
+}
+
+.esc-card .enter-btn {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #333;
+    border: 2px solid #333;
 }
 
 .enter-btn:hover {
-    background-color: #7fb52e;
+    background-color: white;
+    color: #2a6eb5;
 }
 
-.visual-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
-    position: relative;
+.esc-card .enter-btn:hover {
+    background-color: #333;
+    color: white;
 }
 
-/* Card slider CSS - Implementing the reference card behavior */
-.cards {
-    position: relative;
-    width: 100%;
-    height: 50%;
-    margin-bottom: 20px;
+/* Focus styling when card is selected */
+#alliance-radio:checked ~ .alliance-card,
+#esc-radio:checked ~ .esc-card {
+    border-color: #ffca3a;
+    box-shadow: 0 0 20px rgba(255, 202, 58, 0.5);
 }
 
-.card {
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    left: 0;
-    right: 10;
-    margin: auto;
-    transition: transform .4s ease;
-    cursor: pointer;
-    margin-top: 40%;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-/* This exactly matches the reference slider behavior */
-#item-1:checked ~ .company-card .cards #card-3,
-#item-2:checked ~ .company-card .cards #card-1 {
-    transform: translatex(-40%) scale(.8);
-    opacity: .4;
-    z-index: 0;
-}
-
-#item-1:checked ~ .company-card .cards #card-2,
-#item-2:checked ~ .company-card .cards #card-3 {
-    transform: translatex(40%) scale(.8);
-    opacity: .4;
-    z-index: 0;
-}
-
-#item-1:checked ~ .company-card .cards #card-1,
-#item-2:checked ~ .company-card .cards #card-2 {
-    transform: translatex(0) scale(1);
-    opacity: 1;
-    z-index: 1;
-}
-
-#item-1:checked ~ .company-card .cards #card-1 img,
-#item-2:checked ~ .company-card .cards #card-2 img {
-    box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
-}
-
-/* Badge styling */
-.key-badge {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #c5e30e, #92c83e);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.key-content {
-    width: 80px;
-    height: 80px;
-    background-color: #2a5298;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #92c83e;
-}
-
-/* Alliance styling */
-#item-2:checked ~ .company-card .company-info .logo-text {
-    color: #3498db;
-}
-
-#item-2:checked ~ .company-card .enter-btn {
-    background-color: #3498db;
-}
-
-#item-2:checked ~ .company-card .enter-btn:hover {
-    background-color: #2980b9;
-}
-
-#item-2:checked ~ .company-card .key-badge {
-    background: linear-gradient(135deg, #74b9ff, #3498db);
+/* Responsive design */
+@media (max-width: 768px) {
+    .building-header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .building-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .building-name {
+        font-size: 1.8rem;
+    }
+    
+    .directory-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .card-content {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    
+    .company-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .company-info h2 {
+        font-size: 1.3rem;
+    }
+    
+    .floor-info {
+        font-size: 1rem;
+    }
 }

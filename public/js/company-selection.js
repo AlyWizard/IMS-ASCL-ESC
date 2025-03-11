@@ -1,61 +1,68 @@
-// Show/hide appropriate content based on selected company
+/* public/js/company-selection.js */
+
 document.addEventListener('DOMContentLoaded', function() {
-    const escName = document.getElementById('esc-name');
-    const allianceName = document.getElementById('alliance-name');
-    const escEnter = document.getElementById('esc-enter');
-    const allianceEnter = document.getElementById('alliance-enter');
+    // Get elements
+    const allianceCard = document.querySelector('.alliance-card');
+    const escCard = document.querySelector('.esc-card');
+    const allianceRadio = document.getElementById('alliance-radio');
+    const escRadio = document.getElementById('esc-radio');
     
-    // New elements for the logo switching
-    const escIcon = document.getElementById('esc-icon');
-    const allianceIcon = document.getElementById('alliance-icon');
-    //const escText = document.getElementById('esc-text');
-   // const allianceText = document.getElementById('alliance-text');
-    
-    // Function to toggle content based on selected radio
-    function toggleContent() {
-        if (document.getElementById('item-1').checked) {
-            // Show ESC content
-            escName.style.display = 'block';
-            allianceName.style.display = 'none';
-            escEnter.style.display = 'inline-block';
-            allianceEnter.style.display = 'none';
-            
-            // Show ESC logo elements
-            escIcon.style.display = 'block';
-            allianceIcon.style.display = 'none';
-            escText.style.display = 'inline';
-            allianceText.style.display = 'none';
-        } else {
-            // Show Alliance content
-            escName.style.display = 'none';
-            allianceName.style.display = 'block';
-            escEnter.style.display = 'none';
-            allianceEnter.style.display = 'inline-block';
-            
-            // Show Alliance logo elements
-            escIcon.style.display = 'none';
-            allianceIcon.style.display = 'block';
-            escText.style.display = 'none';
-            allianceText.style.display = 'inline';
-        }
-    }
-    
-    // Add change event listeners to radio buttons
-    document.getElementById('item-1').addEventListener('change', toggleContent);
-    document.getElementById('item-2').addEventListener('change', toggleContent);
-    
-    // Handle ESC key press
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' || event.key === 'Esc') {
-            if (document.getElementById('item-1').checked) {
-                document.getElementById('item-2').checked = true;
-            } else {
-                document.getElementById('item-1').checked = true;
-            }
-            toggleContent();
+    // Add highlight animation when hovering over cards
+    allianceCard.addEventListener('mouseenter', function() {
+        if (!allianceRadio.checked) {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.3)';
         }
     });
     
-    // Initialize content
-    toggleContent();
+    allianceCard.addEventListener('mouseleave', function() {
+        if (!allianceRadio.checked) {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        }
+    });
+    
+    escCard.addEventListener('mouseenter', function() {
+        if (!escRadio.checked) {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.3)';
+        }
+    });
+    
+    escCard.addEventListener('mouseleave', function() {
+        if (!escRadio.checked) {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        }
+    });
+    
+    // Prevent form submission when clicking on the card (but not the enter button)
+    document.querySelectorAll('.directory-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Don't interfere with the Enter button click
+            if (!e.target.classList.contains('enter-btn') && 
+                !e.target.closest('.enter-btn')) {
+                e.preventDefault();
+                
+                // Find the radio input within this card and check it
+                const radio = this.getAttribute('for');
+                document.getElementById(radio).checked = true;
+                
+                // Add a small animation to show selection
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            }
+        });
+    });
+    
+    // Handle Enter button clicks to navigate properly
+    document.querySelectorAll('.enter-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // Allow the default anchor behavior 
+            // This is just to prevent the event from bubbling up to the card
+            e.stopPropagation();
+        });
+    });
 });

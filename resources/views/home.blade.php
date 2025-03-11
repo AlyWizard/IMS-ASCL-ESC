@@ -1,53 +1,56 @@
+<!--views/home.blade.php --> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMS - Company Selection</title>
+    <title>Robinsons Equitable Tower - Company Selection</title>
     <!-- Load external CSS file -->
     <link href="{{ asset('css/company-selection.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Radio buttons for the slider -->
-        <input type="radio" name="slider" id="item-1" checked>
-        <input type="radio" name="slider" id="item-2">
+    <div class="main-container">
+        <!-- Building header -->
+        <header class="building-header">
+            <div class="building-logo">
+                <img src="{{ asset('images/robinsons-logo.webp')}}" alt="Robinsons Logo">
+            </div>
+            <h1 class="building-name">Robinsons Equitable Tower</h1>
+        </header>
 
-        <div class="company-card">
-            <div class="company-info">
-        <!-- Company logo and name will change based on selected card -->
-        <div class="company-logo">
-            <div class="logo-img">
-                <!-- Logo images that will switch based on selection -->
-                <img id="esc-icon" src="{{ asset('images/esc-logo.png') }}" alt="ESC Icon">
-                <img id="alliance-icon" src="{{ asset('images/alliance-logo.png') }}" alt="Alliance Icon" style="display: none;">
-            </div>
-            
-        </div>
-                
-                <h1 class="company-name">
-                    <span id="esc-name">ESC Corporation</span>
-                    <span id="alliance-name" style="display: none;">Alliance Service Centre Limited</span>
-                </h1>
-                
+        <!-- Company selection cards -->
+        <div class="directory-container">
+            <!-- Radio buttons for selection -->
+            <input type="radio" name="company" id="alliance-radio">
+            <input type="radio" name="company" id="esc-radio" checked>
+
+            <!-- Alliance Card -->
+            <label for="alliance-radio" class="directory-card alliance-card">
+                <div class="card-content">
+                    <div class="company-logo">
+                        <img id="alliance-icon" src="{{ asset('images/alliance-logo.png') }}" alt="Alliance Icon">
+                    </div>
+                    <div class="company-info">
+                        <h2 id="alliance-name">Alliance Service Centre Limited</h2>
+                        <p class="floor-info">15th Floor</p>
+                    </div>
+                </div>
+                <a href="{{ route('alliance.login') }}" id="alliance-enter" class="enter-btn">Enter</a>
+            </label>
+
+            <!-- ESC Card -->
+            <label for="esc-radio" class="directory-card esc-card">
+                <div class="card-content">
+                    <div class="company-logo">
+                        <img id="esc-icon" src="{{ asset('images/esc-logo.png') }}" alt="ESC Icon">
+                    </div>
+                    <div class="company-info">
+                        <h2 id="esc-name">ESC Corporation</h2>
+                        <p class="floor-info">20th & 15th Floors</p>
+                    </div>
+                </div>
                 <a href="{{ route('esc.login') }}" id="esc-enter" class="enter-btn">Enter</a>
-                <a href="{{ route('alliance.login') }}" id="alliance-enter" class="enter-btn" style="display: none;">Enter</a>
-            </div>
-            
-            <div class="visual-area">
-                <div class="cards">
-                    <!-- ESC Card -->
-                    <label class="card" for="item-1" id="card-1">
-                        <img src="{{ asset('images/esc-card.png') }}" alt="ESC">
-                    </label>
-                    
-                    <!-- Alliance Card -->
-                    <label class="card" for="item-2" id="card-2">
-                        <img src="{{ asset('images/alliance-card.png') }}" alt="Alliance">
-                    </label>
-                    
-                
-            </div>
+            </label>
         </div>
     </div>
 

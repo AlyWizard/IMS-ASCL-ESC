@@ -82,3 +82,4 @@ Route::put('/esc/workstation/{id}', [App\Http\Controllers\EscApiController::clas
 // Transfer workstation
 Route::post('/esc/workstation/transfer', [App\Http\Controllers\EscApiController::class, 'transferWorkstation']);
 
+//end of the workstation functions
