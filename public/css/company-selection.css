@@ -103,6 +103,8 @@ input[type=radio] {
 .directory-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    filter: grayscale(100%);
+    transform: scale(1.05);
 }
 
 /* Alliance card specific styling */

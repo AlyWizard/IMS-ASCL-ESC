@@ -1,3 +1,4 @@
+<!--File Structure: resources/alliance/login.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,66 +7,30 @@
     <title>Alliance Service Centre Limited - Login</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #1a2632;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .login-container {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            max-width: 450px;
-            width: 90%;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .login-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .login-logo {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-        
-        .btn-login {
-            background-color: #92c83e;
-            border: none;
-            width: 100%;
-            padding: 10px;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .btn-login:hover {
-            background-color: #7fb52e;
-        }
-        
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: #92c83e;
-            text-decoration: none;
-        }
-    </style>
+    <link href="{{ asset('css/company-selection.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/alliance-login.css') }}" rel="stylesheet">
+    
+    
 </head>
 <body>
     <div class="login-container">
         <div class="login-header">
-            <img src="{{ asset('images/alliance-logo.png') }}" alt="alliance Logo" class="login-logo">
-            <h3>Alliance Service Centre Limited</h3>
-            <p class="text-muted">Inventory Management System</p>
+            <div class="alliance-text">
+            <img src="{{ asset('images/alliance-logo.png')}}"alt="Alliance logo">
+            <!-- <span>A</span>LL<span>I</span><span>A</span>NCE -->
+            </div>
+            <div class="subtitle">
+             <!-- di na need   SERVICE CENTRE LIMITED  -->
+            </div>
+        </div>
+        
+        <div class="login-form-header">
+            <div class="login-title">Login</div>
+            <div class="admin-access">Admin Access only</div>
         </div>
         
         @if($errors->any())
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" style="font-size: 14px; padding: 8px 12px; margin-bottom: 15px;">
                 @foreach($errors->all() as $error)
                     {{ $error }}<br>
                 @endforeach
@@ -74,22 +39,14 @@
         
         <form action="{{ route('alliance.login') }}" method="post">
             @csrf
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username" value="{{ old('username') }}" required>
-            </div>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="{{ old('username') }}" required>
             
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
-            </div>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
             
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                <label class="form-check-label" for="remember">Remember me</label>
-            </div>
+            <button type="submit" class="btn btn-login">Log-in</button>
             
-            <button type="submit" class="btn btn-login">Login</button>
+            <a href="#" class="forgot-password">Forgot Password</a>
+            
         </form>
         
         <a href="{{ route('home') }}" class="back-link">Return to Selection Page</a>
