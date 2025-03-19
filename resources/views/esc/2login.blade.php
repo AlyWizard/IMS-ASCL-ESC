@@ -45,8 +45,6 @@
             
             <a href="#" class="forgot-password">Forgot Password</a>
             
-            
-            
         </form>
         
         <a href="{{ route('home') }}" class="back-link">Return to Selection Page</a>

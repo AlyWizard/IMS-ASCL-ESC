@@ -1,145 +1,164 @@
-  <!-- file: resources/views/esc/dashboard.blade.php -->
+<!--File Structure: resources/esc/dashboard.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>ESC Corporation - Dashboard</title>
+    <title>ESC Corporation - Inventory Dashboard</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/esc-dashboard.css') }}">
+
+    
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Header -->
-        <header class="dashboard-header">
-            <div class="logo-section">
-                <img src="{{ asset('images/esc-logo.png') }}" alt="ESC Logo" class="esc-logo">
-                <h1 class="logo-text">Esc <span class="corporation">CORPORATION</span></h1>
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <!--<div class="logo">ALLIANCE</div> -->
+                <!--<div style="color: #8b949e; font-size: 9px; letter-spacing: 0.5px; margin-top: 2px;">SECURITY SYSTEMS COMPANY</div> -->
+                <img src="{{ asset('images/DSH-ESC-LOGO.png')}}"alt="Alliance logo" class="logo">
+
+            </div>
+        <div class="menu-items-container">
+         <div class="menu-title">Floor Mapping</div>
+                    <div class="menu-item">
+                        <div style="width: 16px; height: 16px; background-color: #e74c3c; border-radius: 2px; margin-right: 10px;"></div>
+                        <span>Unassigned</span>
+                    </div>
+                    <div class="menu-item">
+                        <div style="width: 16px; height: 16px; background-color: #f39c12; border-radius: 2px; margin-right: 10px;"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="menu-item ">
+                        <div style="width: 16px; height: 16px; background-color: #2ecc71; border-radius: 2px; margin-right: 10px;"></div>
+                        <span>Complete</span>
+                    </div>
             </div>
             
-            <div class="actions-section">
-                <a href="#" class="action-button">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Reports</span>
-                </a>
-                <a href="#" class="action-button">
-                    <i class="fas fa-info-circle"></i>
-                    <span>About</span>
-                </a>
-                <a href="{{ route('esc.logout') }}" class="action-button" 
-                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
-                </a>
-                <form id="logout-form" action="{{ route('esc.logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </div>
-        </header>
+           
+                <div class="menu-title-inv">Inventories</div>
+                <div class="menu-items-container">
+                    <div class="menu-item">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/user.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                        <span>Employees</span>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/simpleicons.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                        <span>Manufacturers</span>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/cakephp.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                        <span>Categories</span>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/apple.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                        <span>Models</span>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/atom.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                        <span>Assets</span>
+                    </div>
+                </div>
+            
+
+                <div class="menu-title-others">Others</div>
+                <div class="menu-items-container-oth">
+                    <div class="menu-item-oth">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/clipboard.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                        <span>Activity Reports</span>
+                    </div>
+                    <div class="menu-item-oth">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/buffer.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                        <span>Settings & Sessions</span>
+                    </div>
+                    <div class="menu-item-oth">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/buffer.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                        <span>Account Creation </span>
+                    </div>
+                </div>
+
+                    <div class="row g-1">
+                        <div class="col-6">
+                            <div class="menu-item-one  text-center">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/aboutdotme.svg" width="16" height="16" style="filter: invert(1); margin-right: 5px;">
+                                <span>About</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                             <a href="{{ route('esc.logout') }}" class="menu-item-one text-center"
+                                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                 <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/keybase.svg" width="16" height="16" style="filter: invert(1); margin-right: 5px;">
+                                  <span>Logout</span>
+                              </a>
+                          <form id="logout-form" action="{{ route('esc.logout') }}" method="POST" style="display: none;">
+                          @csrf
+                          </form>
+                        </div>
+                    </div>
+         </div>
         
         <!-- Main Content -->
-        <main class="dashboard-content">
-            <!-- Floor Plan Section -->
-            <div class="floor-plan-section">
-                <div id="floor-plan-container">
-                    <!-- Floor plan will be loaded here -->
-                </div>
-                <div class="floor-info">
-                    <span class="floor-label">Floor Plan</span>
-                    <span class="floor-number">15th Floor</span>
-                </div>
+        <div class="main-content">
+            <div class="floor-map-container">
+
+                
+                <div class="floor-number">20F</div>
+                
+                <!-- This is where the floor map SVG wil go insert the floor map here -->
+ 
+                
+            </div>
+        </div>
+        
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <div class="right-sidebar-title">Assets</div>
+            
+            <div class="status-item">
+                <div class="status-icon" style="border: 1px solid #fff;"></div>
+                <span>List All</span>
             </div>
             
-        <!-- Sidebar -->
-        <div class="dashboard-sidebar">
-            <div class="sidebar-menu">
-                <a href="#" class="menu-item">People</a>
-                <a href="#" class="menu-item">Inventory</a>
-                <div class="submenu">
-                    <a href="#" class="submenu-item">Assets</a>
-                    <a href="#" class="submenu-item">Licenses</a>
-                    <a href="#" class="submenu-item">Models</a>
-                    <a href="#" class="submenu-item">Categories</a>
-                    <a href="#" class="submenu-item">Manufacturer</a>
-                </div>
+            <div class="status-item">
+                <div class="status-icon" style="background-color: #2ecc71;"></div>
+                <span>Ready to Deploy</span>
             </div>
-    
-        <div class="sidebar-footer">
-            <button class="create-new-btn">Create New</button>
-        </div>
-</div>
-    
-<!-- Workstation Modal - Enhanced for editing -->
-<div class="modal fade" id="workstationModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Workstation Details</h5>
-                <div class="modal-actions">
-                    <button type="button" class="btn btn-sm btn-primary me-2" id="editModeToggle">
-                        <i class="fas fa-edit"></i> Edit
-                    </button>
-                    <button type="button" class="btn btn-sm btn-warning me-2" id="transferBtn">
-                        <i class="fas fa-exchange-alt"></i> Transfer
-                    </button>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+            
+            <div class="status-item">
+                <div class="status-icon" style="background-color: #3498db;"></div>
+                <span>Onsite (Deployed)</span>
             </div>
-            <div class="modal-body">
-                <div id="workstation-details">
-                    <!-- Workstation details will be loaded here -->
-                </div>
-                
-                <div id="edit-form-container" class="d-none">
-                    <form id="workstationEditForm">
-                        <input type="hidden" id="workstation_id" name="workstation_id">
-                        
-                        <div class="mb-3">
-                            <label for="employee_name" class="form-label">Employee Name</label>
-                            <input type="text" class="form-control" id="employee_name" name="employee_name">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="position" class="form-label">Position</label>
-                            <input type="text" class="form-control" id="position" name="position">
-                        </div>
-                        
-                        <h5 class="mt-4">Asset Information</h5>
-                        <div id="assets-container">
-                            <!-- Asset edit forms will be generated here -->
-                        </div>
-                    </form>
-                </div>
-                
-                <div id="transfer-container" class="d-none">
-                    <h5>Transfer Employee & Assets to Another Workstation</h5>
-                    <div class="mb-3">
-                        <label for="transferDestination" class="form-label">Select Destination Workstation</label>
-                        <select class="form-select" id="transferDestination">
-                            <option value="">-- Select Workstation --</option>
-                            <!-- Options will be populated dynamically -->
-                        </select>
-                    </div>
-                    <button type="button" class="btn btn-warning" id="confirmTransferBtn">
-                        <i class="fas fa-exchange-alt"></i> Confirm Transfer
-                    </button>
-                    <button type="button" class="btn btn-secondary" id="cancelTransferBtn">
-                        <i class="fas fa-times"></i> Cancel
-                    </button>
-                </div>
+            
+            <div class="status-item">
+                <div class="status-icon" style="background-color: #3498db;"></div>
+                <span>WiFi (Deployed)</span>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success d-none" id="saveChangesBtn">Save Changes</button>
+            
+            <div class="status-item">
+                <div class="status-icon" style="background-color: #e84393;"></div>
+                <span>Temporarily Deployed</span>
             </div>
+            
+            <div class="status-item">
+                <div class="status-icon" style="background-color: #f39c12;"></div>
+                <span>Borrowed by ESC</span>
+            </div>
+            
+            <div class="status-item">
+                <div class="status-icon" style="background-color: #e74c3c;"></div>
+                <span>Defective</span>
+            </div>
+
+            <button class="create-btn">Create New</button>
+
         </div>
     </div>
-</div>
 
-    <!-- Scripts -->
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('js/esc-dashboard.js') }}"></script>
 </body>
 </html>
