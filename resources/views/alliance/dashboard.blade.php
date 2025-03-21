@@ -4,113 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESC Corporation - Inventory Dashboard</title>
+    <title>Alliance Service Centre Limited - Inventory Dashboard</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/alliance-dashboard.css') }}">
-
-    
 </head>
 <body>
     <div class="dashboard-container">
         <!-- Left Sidebar -->
         <div class="sidebar">
             <div class="logo-container">
-                <!--<div class="logo">ALLIANCE</div> -->
-                <!--<div style="color: #8b949e; font-size: 9px; letter-spacing: 0.5px; margin-top: 2px;">SECURITY SYSTEMS COMPANY</div> -->
-                <img src="{{ asset('images/alliance-logo.png')}}" alt="Aliiance Log" class="logo">
-
-
-            </div>
-        <div class="menu-items-container">
-         <div class="menu-title">Floor Mapping</div>
-                    <div class="menu-item">
-                        <div style="width: 16px; height: 16px; background-color: #e74c3c; border-radius: 2px; margin-right: 10px;"></div>
-                        <span>Unassigned</span>
-                    </div>
-                    <div class="menu-item">
-                        <div style="width: 16px; height: 16px; background-color: #f39c12; border-radius: 2px; margin-right: 10px;"></div>
-                        <span>Available</span>
-                    </div>
-                    <div class="menu-item ">
-                        <div style="width: 16px; height: 16px; background-color: #2ecc71; border-radius: 2px; margin-right: 10px;"></div>
-                        <span>Complete</span>
-                    </div>
+                <img src="{{ asset('images/alliance-logo.png')}}" alt="Alliance Logo" class="logo">
             </div>
             
-           
-                <div class="menu-title-inv">Inventories</div>
-                <div class="menu-items-container">
-                    <div class="menu-item">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/user.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
-                        <span>Employees</span>
-                    </div>
-                    <div class="menu-item">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/simpleicons.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
-                        <span>Manufacturers</span>
-                    </div>
-                    <div class="menu-item">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/cakephp.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
-                        <span>Categories</span>
-                    </div>
-                    <div class="menu-item">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/apple.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
-                        <span>Models</span>
-                    </div>
-                    <div class="menu-item">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/atom.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
-                        <span>Assets</span>
-                    </div>
+            <div class="menu-items-container">
+                <div class="menu-title">Floor Mapping</div>
+                <div class="menu-item">
+                    <div style="width: 16px; height: 16px; background-color: #e74c3c; border-radius: 2px; margin-right: 10px;"></div>
+                    <span>Available</span>
                 </div>
+                <div class="menu-item">
+                    <div style="width: 16px; height: 16px; background-color: #f39c12; border-radius: 2px; margin-right: 10px;"></div>
+                    <span>Incomplete</span>
+                </div>
+                <div class="menu-item ">
+                    <div style="width: 16px; height: 16px; background-color: #2ecc71; border-radius: 2px; margin-right: 10px;"></div>
+                    <span>Complete</span>
+                </div>
+                <div class="menu-item ">
+                    <div style="width: 16px; height: 16px; background-color: #02B3E8; border-radius: 2px; margin-right: 10px;"></div>
+                    <span>I.T</span>
+                </div>
+            </div>
             
+            <div class="menu-title-inv">Inventories</div>
+            <div class="menu-items-container">
+                <div class="menu-item">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/user.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                    <span>Employees</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/simpleicons.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                    <span>Manufacturers</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/cakephp.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                    <span>Categories</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/apple.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                    <span>Models</span>
+                </div>
+                <div class="menu-item">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/atom.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                    <span>Assets</span>
+                </div>
+            </div>
+            
+            <div class="menu-title-others">Others</div>
+            <div class="menu-items-container-oth">
+                <div class="menu-item-oth">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/clipboard.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                    <span>Activity Reports</span>
+                </div>
+                <div class="menu-item-oth">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/buffer.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                    <span>Settings & Sessions</span>
+                </div>
+                <div class="menu-item-oth">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/buffer.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
+                    <span>Account Creation </span>
+                </div>
+            </div>
 
-                <div class="menu-title-others">Others</div>
-                <div class="menu-items-container-oth">
-                    <div class="menu-item-oth">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/clipboard.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
-                        <span>Activity Reports</span>
-                    </div>
-                    <div class="menu-item-oth">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/buffer.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
-                        <span>Settings & Sessions</span>
-                    </div>
-                    <div class="menu-item-oth">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/buffer.svg" width="16" height="16" style="filter: invert(1); margin-right: 10px;">
-                        <span>Account Creation </span>
+            <div class="row g-1">
+                <div class="col-6">
+                    <div class="menu-item-one text-center">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/aboutdotme.svg" width="16" height="16" style="filter: invert(1); margin-right: 5px;">
+                        <span>About</span>
                     </div>
                 </div>
-
-                    <div class="row g-1">
-                        <div class="col-6">
-                            <div class="menu-item-one  text-center">
-                                <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/aboutdotme.svg" width="16" height="16" style="filter: invert(1); margin-right: 5px;">
-                                <span>About</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                             <a href="{{ route('esc.logout') }}" class="menu-item-one text-center"
-                                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                 <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/keybase.svg" width="16" height="16" style="filter: invert(1); margin-right: 5px;">
-                                  <span>Logout</span>
-                              </a>
-                          <form id="logout-form" action="{{ route('esc.logout') }}" method="POST" style="display: none;">
-                          @csrf
-                          </form>
-                        </div>
-                    </div>
-         </div>
+                <div class="col-6">
+                     <a href="{{ route('alliance.logout') }}" class="menu-item-one text-center"
+                          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                         <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/keybase.svg" width="16" height="16" style="filter: invert(1); margin-right: 5px;">
+                          <span>Logout</span>
+                      </a>
+                  <form id="logout-form" action="{{ route('alliance.logout') }}" method="POST" style="display: none;">
+                  @csrf
+                  </form>
+                </div>
+            </div>
+        </div>
         
         <!-- Main Content -->
         <div class="main-content">
             <div class="floor-map-container">
-
-                
                 <div class="floor-number">15F</div>
                 
-                <!-- This is where the floor map SVG will go -->
- 
+                <!-- This is where the floor map is embedded -->
+                <object id="floorPlanSVG" data="{{ asset('svg/ASCL_FloorPlan.svg') }}" type="image/svg+xml" width="100%" height="100%"></object>
                 
             </div>
         </div>
@@ -155,11 +150,64 @@
             </div>
 
             <button class="create-btn">Create New</button>
-
         </div>
     </div>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS for floorplan interaction -->
+    <script src="{{ asset('js/floorplan-interaction.js') }}"></script>
+    
+    <!-- Debug script to help troubleshoot SVG loading -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, checking SVG object...');
+        
+        const svgObject = document.getElementById('floorPlanSVG');
+        if (!svgObject) {
+            console.error('SVG object not found in DOM!');
+            return;
+        }
+        
+        console.log('SVG object found in DOM:', svgObject);
+        
+        svgObject.addEventListener('load', function() {
+            console.log('SVG loaded, attempting to access content document...');
+            
+            try {
+                const svgDoc = svgObject.contentDocument;
+                if (!svgDoc) {
+                    console.error('SVG content document is null!');
+                    return;
+                }
+                
+                console.log('SVG document accessed successfully!');
+                
+                // List all elements with our target classes
+                const workstations = svgDoc.querySelectorAll('.WorkStation');
+                const servers = svgDoc.querySelectorAll('.Server');
+                const boardrooms = svgDoc.querySelectorAll('.BoardRoom');
+                
+                console.log(`Found ${workstations.length} workstations`);
+                console.log(`Found ${servers.length} servers`);
+                console.log(`Found ${boardrooms.length} boardrooms`);
+                
+                if (workstations.length === 0) {
+                    const rects = svgDoc.querySelectorAll('rect');
+                    console.log(`Found ${rects.length} rectangles in SVG`);
+                    
+                    // List the first 5 rectangles' classes
+                    console.log('First few rectangle elements:');
+                    for (let i = 0; i < Math.min(5, rects.length); i++) {
+                        console.log(`Rectangle ${i+1}:`, rects[i].id, 'class:', rects[i].getAttribute('class'));
+                    }
+                }
+            } catch (e) {
+                console.error('Error accessing SVG content:', e);
+            }
+        });
+    });
+    </script>
 </body>
 </html>

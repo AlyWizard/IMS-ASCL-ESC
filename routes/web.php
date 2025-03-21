@@ -83,3 +83,15 @@ Route::put('/esc/workstation/{id}', [App\Http\Controllers\EscApiController::clas
 Route::post('/esc/workstation/transfer', [App\Http\Controllers\EscApiController::class, 'transferWorkstation']);
 
 //end of the workstation functions
+
+
+// Add these routes to your routes/web.php file
+
+// Alliance API Routes
+Route::prefix('alliance')->group(function () {
+    Route::get('/workstation/{id}', [App\Http\Controllers\AllianceApiController::class, 'getWorkstationDetails']);
+    Route::get('/server/{id}', [App\Http\Controllers\AllianceApiController::class, 'getServerDetails']);
+    Route::get('/boardroom/{id}', [App\Http\Controllers\AllianceApiController::class, 'getBoardroomDetails']);
+    Route::get('/workstations', [App\Http\Controllers\AllianceApiController::class, 'getAllWorkstations']);
+    Route::post('/workstation/device', [App\Http\Controllers\AllianceApiController::class, 'addDeviceToWorkstation']);
+});

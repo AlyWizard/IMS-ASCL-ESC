@@ -436,36 +436,121 @@ body {
     font-weight: bold;
 }
 
-/* ===== Responsive Styles ===== */
-@media (max-width: 992px) {
-.dashboard-content {
-flex-direction: column;
+
+/*===== Start here the interactive floorPlan Soafer Latina ===== */
+
+/* Add this to public/css/alliance-dashboard.css */
+
+/* SVG container styling */
+.floor-map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 
-.dashboard-sidebar {
-width: 100%;
-}
-}
-
-@media (max-width: 768px) {
-.dashboard-header {
-flex-direction: column;
-gap: 15px;
+#floorPlanSVG {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #444;
 }
 
-.actions-section {
-width: 100%;
-justify-content: space-between;
+/* Custom styles to ensure the workstations are clickable */
+#floorPlanSVG rect {
+    cursor: pointer;
+    transition: fill-opacity 0.2s ease;
 }
 
-.assets-list {
-grid-template-columns: 1fr;
+#floorPlanSVG rect:hover {
+    fill-opacity: 0.8;
 }
 
-.modal-dialog {
-max-width: 95%;
-margin: 10px auto;
-}
+/* Popup styling */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
+.workspace-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2d3748;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000;
+    width: 400px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    color: #e2e8f0;
+}
 
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4a5568;
+}
+
+.popup-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.close-popup {
+    cursor: pointer;
+    font-size: 24px;
+    color: #a0aec0;
+    transition: color 0.2s;
+}
+
+.close-popup:hover {
+    color: #e2e8f0;
+}
+
+.employee-info {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #3f4758;
+    border-radius: 4px;
+}
+
+.device-list {
+    margin: 15px 0;
+}
+
+.device-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #3f4758;
+    border-radius: 4px;
+}
+
+.add-device-btn {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.add-device-btn:hover {
+    background-color: #3182ce;
+}
